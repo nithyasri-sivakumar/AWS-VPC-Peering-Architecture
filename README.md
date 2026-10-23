@@ -44,19 +44,19 @@ An enterprise-grade AWS multi-VPC networking lab demonstrating secure private cr
 
 ### 1. Public Route Table & Internet Gateway Routing
 Public route table (`ewb-rt-a-public`) associated with `ewb-a-public` subnet, routing `0.0.0.0/0` traffic to Internet Gateway `ewb-igw-a`.
-![Checkpoint 01](images/checkpoint-01-public-route-table.png)
+![Checkpoint 01](images/checkpoint-01-public-route-table.jpeg)
 
 ### 2. Private Workload Isolation
 Verification that `ewb-app-a` (`10.10.2.10`) and `ewb-app-b` (`10.20.1.10`) have zero public IPv4 assignments.
 <p float="left">
-  <img src="images/checkpoint-02a-app-a-private.png" width="48%" />
-  <img src="images/checkpoint-02b-app-b-private.png" width="48%" />
+  <img src="images/checkpoint-02a-app-a-private.jpeg" width="48%" />
+  <img src="images/checkpoint-02b-app-b-private.jpeg" width="48%" />
 </p>
 
 ### 3. Active VPC Peering Connection
 Active peering connection `ewb-pcx-a-b` bridging `10.10.0.0/16` and `10.20.0.0/16`.
-![Checkpoint 03](images/checkpoint-03-vpc-peering-active.png)
+![Checkpoint 03](images/checkpoint-03-vpc-peering-active.jpeg)
 
 ### 4. End-to-End Cross-VPC Connectivity Testing
 Verification of SSH Agent Forwarding jump login to `ewb-app-a` (`10.10.2.10`) and successful ICMP echo request (`ping 10.20.1.10 -c 4`) across the peering link with **0% packet loss**.
-![Checkpoint 04](images/checkpoint-04-ping-verification.png)
+![Checkpoint 04](images/checkpoint-04-ping-verification.jpeg)
